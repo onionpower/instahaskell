@@ -1,2 +1,3 @@
-dist :: (Double, Double) -> (Double, Double) -> Double
-dist (x1, y1) (x2, y2) = sqrt $ (x2 - x1) ^ 2 + (y2 - y1) ^ 2
+doubleFact :: Integer -> Integer
+doubleFact n | n < 2 = 1
+             | otherwise = n * doubleFact (n - 2)
