@@ -1,18 +1,17 @@
-fibonacci :: Integer -> Integer
-fibonacci 0 = 0
-fibonacci 1 = 1
-fibonacci n | n > 0 = incfib 0 1 0 (n - 1)
-      | n < 0 = decfib 0 1 0 (n * (-1) - 1)
+--a0 = 1, a1 = 2, a2 = 3, a(k+3) = a(k+2) + a(k+1) - 2*ak
 
-incfib :: Integer -> Integer -> Integer -> Integer -> Integer
-incfib cur next it max 
-                    | it > max = cur
-                    | True = incfib (next) (cur + next) (it + 1) max
+seqA :: Integer -> Integer
+seqA 0 = 1
+seqA 1 = 2
+seqA 2 = 3
+seqA n = seqI 3 2 1 4 n
 
-decfib :: Integer -> Integer -> Integer -> Integer -> Integer
-decfib cur next it max
-                    | it > max = cur * (-1)^max
-                    | True = decfib (next) (cur + next) (it + 1) max
-inc n = incI 0 0 n
-incI acc it n | it > n = acc
-              | True = incI (acc + it) (it + 1) n
+seqI :: Integer -> Integer -> Integer -> Integer -> Integer -> Integer
+seqI n2 n1 n it max | it > max = n2 + n1 + 2*n
+                    | True = seqI (n2 + n1 + 2*n) n2 n1 (it + 1) max
+
+seqB :: Integer -> Integer
+seqB 0 = 1
+seqB 1 = 2
+seqB 2 = 3
+seqB n =  2 * seqB (n - 3) + seqB (n - 2) + seqB (n - 1)
