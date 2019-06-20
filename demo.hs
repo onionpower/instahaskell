@@ -1,4 +1,3 @@
-import Data.Char
-twoDigits2Int :: Char -> Char -> Int
-twoDigits2Int x y = digitToInt x + digitToInt y
-twoDigits2Int :: Char -> Char -> Int
+single :: Char -> Char -> Int
+single x y | isDigit x && isDigit y = digitToInt x * 10 + digitToInt y
+           | otherwise = 100
