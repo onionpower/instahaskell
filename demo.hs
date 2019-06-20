@@ -1,4 +1,4 @@
-disc :: Double -> Double -> Double -> Double
-disc limit proc sum = max (sum * (1 - proc/100)) limit
-discTen :: Double -> Double -> Double
-discTen proc sum = disc 10 proc sum
+import Data.Char
+twoDigits2Int :: Char -> Char -> Int
+twoDigits2Int x y = digitToInt x + digitToInt y
+twoDigits2Int :: Char -> Char -> Int
