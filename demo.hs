@@ -8,7 +8,7 @@ integration :: (Double -> Double) -> Double -> Double -> Double
 integration f a b = 
     let fa = f a
         fb = f b
-        square a b = (fa * fb) - (fa - fb)
+        square a b = (b - a) * (fa + fb)/2
     in square a b
 
 swap :: (a, b) -> (b, a)
